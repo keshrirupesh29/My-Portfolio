@@ -1,0 +1,22 @@
+body{
+background-color: rgb(236, 227, 227);
+}
+
+.home
+{
+    height: 100vh;
+    background: linear-gradient(rgb(233, 223, 223),rgb(94, 90, 90));
+    background-image: url(../images/Background.jpg)
+    ;
+    background-size: cover;
+    
+    
+}
+.intro
+{
+    color: white;
+    padding: 10% 30%;
+    text-align: justify;
+    font-weight: 100;
+}
+
