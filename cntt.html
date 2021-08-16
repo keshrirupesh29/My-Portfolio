@@ -1,0 +1,54 @@
+<?php 
+if(isset($_POST['send']))
+{
+   $email =  $_POST['receiver_email'];
+   $msg =  $_POST['msg'];
+    
+    $to = "$email";
+    $subject = "Message From DEALEASY.IN";
+    $header = "From:message@dealeasy.in \r\n";
+    $header .= "MIME-Version: 1.0\r\n";
+    $header .= "Content-type: text/html\r\n";
+    $message = "$msg";
+     if(mail ($to,$subject,$message,$header))
+     {
+         echo "<script>alert('Email sent sucessfully');</script>";
+     }
+    else
+    {
+        echo "<script>alert('Email sending failed !');</script>";
+    }
+}    
+?>
+
+
+<form action="#" method="post">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-4">
+            <div class="form-group">
+                <label>Enter Receiver's Email</label>    
+                <input type="text" class="form-control" name="receiver_email">
+            </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-4"></div>
+            <div class="col-sm-12 col-xs-12 col-md-4"></div>
+        </div>
+         <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-8">
+            <div class="form-group">
+                <label>Enter Message you want to send</label>    
+                <textarea placeholder="Enter your message here" name="msg" style="min-width:100%;max-width:100%;min-height:250px;max-height:250px;">
+                
+                </textarea>
+            </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-4"></div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12 col-xs-12 col-md-12">
+            <center>
+            <input type="submit" name="send" value="Send Message" class="btn btn-warning">
+            </center>    
+        </div>
+        </div>
+        </form>
